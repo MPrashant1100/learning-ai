@@ -11,4 +11,5 @@ for i in range(3):
 print("\n✅ Here are your prompts: ")
 
 for prompt in prompts:
-    print(f"prompt: ", prompt )
+    word_count = len(prompt.split())
+    print(f"Prompt: \" {prompt} \" -> {word_count} words")
