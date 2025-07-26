@@ -6,5 +6,5 @@ goal = input("What’s your goal in AI? ")
 
 goal = goal.strip().lower()
 
-print("Your Personal Motivation Message:")
+print("\n Your Personal Motivation Message:")
 print(f"Hey {name} ({age}), your goal to \"{goal}\" is powerful.")
