@@ -10,6 +10,8 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 
 print("🤖 Gemini AI Agent Activated! Type 'exit' to quit.\n")
 
+conversation = []  # stores memory
+
 while True:
     user_input = input("You: ")
 
@@ -17,8 +19,16 @@ while True:
         print("Agent: Goodbye 👋")
         break
 
+    conversation.append({"role": "user", "parts": [user_input]})
+
     try:
-        response = model.generate_content(user_input)
-        print(f"Agent: {response.text}\n")
+        # response = model.generate_content(user_input)
+        # print(f"Agent: {response.text}\n")
+         # Ask the model with full conversation history
+        response = model.generate_content(conversation)
+        print("Agent:", response.text)
+
+        # Add assistant response to memory
+        conversation.append({"role": "model", "parts": [response.text]})
     except Exception as e:
         print(f"❌ Error: {e}")
