@@ -26,6 +26,6 @@ Summarize the following content in 4 bullet points:
 # Call Gemini to generate summary
 response = model.generate_content(prompt)
 
-# Show output
+# Show output .
 print("\n📌 Summary:")
 print(response.text)
